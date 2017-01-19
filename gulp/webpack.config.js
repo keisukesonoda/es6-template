@@ -1,19 +1,19 @@
-import conf from './config'
-import webpack from 'webpack'
 
+const CONFIG = require('./config');
+const webpack = require('webpack');
 
 const webpackConf = {
 
   // エントリーポイント
   entry: {
-    app: [`${conf.path.src.js}/app.js`],
-    main: [`${conf.path.src.js}/main.js`],
+    app: [`${CONFIG.PATH.src.js}/app.js`],
+    main: [`${CONFIG.PATH.src.js}/main.js`],
   },
 
   // 出力先
   output: {
-    // filename: 'bundle.js'
-    filename: '[name].js'
+    filename: 'bundle.js',
+    // filename: '[name].js'
   },
 
   // dev-server設定
@@ -28,14 +28,22 @@ const webpackConf = {
   // プラグイン設定（https://github.com/webpack/docs/wiki/list-of-plugins）
   plugins: [
     // ファイル圧縮
-    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false,
+      },
+    }),
     // ファイルを細かく分析してまとめられるところは可能な限りまとめて圧縮
     new webpack.optimize.AggressiveMergingPlugin(),
+    new webpack.ProvidePlugin({
+      jQuery: 'jquery',
+      $: 'jquery',
+    }),
   ],
 
   // require時の拡張子省略
   resolve: {
-    extensions: ["", ".webpack.js", '.web.js', '.js', '.yaml']
+    extensions: ['', '.webpack.js', '.web.js', '.js', '.yaml'],
   },
 
   // javascript意外のソースを読み込むためのモジュール設定
@@ -48,20 +56,19 @@ const webpackConf = {
         exclude: /node_modules/,
         loader: 'babel',
         query: {
-          presets: ['es2015']
-        }
+          presets: ['es2015'],
+        },
       },
       {
         test: /\.json$/,
-        loader: 'json'
+        loader: 'json',
       },
       {
         test: /\.yaml$/,
-        loaders: ['json', 'yaml']
-      }
-    ]
-  }
-}
+        loaders: ['json', 'yaml'],
+      },
+    ],
+  },
+};
 
-
-module.exports = webpackConf
+module.exports = webpackConf;

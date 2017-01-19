@@ -1,9 +1,9 @@
-import cats from '../data/cats'
+import cats from '../data/cats.yaml';
 
 class Person {
   constructor(name) {
     this.name = name;
-    console.log(cats);
+    this.cats = cats;
   }
 }
 

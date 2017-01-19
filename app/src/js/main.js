@@ -1,14 +1,16 @@
 import Person from './app';
 
-class Friend extends Person{
+class Friend extends Person {
   constructor(name) {
     super(name);
+    this.name = name;
   }
   callName() {
     console.log(this.name);
+    console.log(this.cats);
   }
 }
 
-var friend = new Friend('hoge');
+const friend = new Friend('hoge');
 
 friend.callName();
