@@ -6,14 +6,15 @@ const webpackConf = {
 
   // エントリーポイント
   entry: {
+    init: [`${CONFIG.PATH.src.js}/init.js`],
     app: [`${CONFIG.PATH.src.js}/app.js`],
     main: [`${CONFIG.PATH.src.js}/main.js`],
   },
 
   // 出力先
   output: {
-    filename: 'bundle.js',
-    // filename: '[name].js'
+    // filename: 'bundle.js',
+    filename: '[name].js'
   },
 
   // dev-server設定
