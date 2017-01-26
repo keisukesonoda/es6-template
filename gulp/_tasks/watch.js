@@ -10,6 +10,11 @@ gulp.task('watch', () => {
   ], ['reload']);
 
   gulp.watch([
+    `${CONFIG.PATH.src.temp}/**/*.ect`,
+    `${CONFIG.PATH.src.data}/**`,
+  ], ['ect-base']);
+
+  gulp.watch([
     `${CONFIG.PATH.src.js}/**`,
   ], ['webpack']);
 

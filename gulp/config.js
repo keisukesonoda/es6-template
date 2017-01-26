@@ -15,6 +15,10 @@ CONFIG.DIR = {
   css: 'css',
   sass: 'sass',
   data: 'data',
+  img: 'img',
+  inq: 'includes',
+  temp: 'templates',
+  cont: 'content',
 };
 
 /**
@@ -28,16 +32,25 @@ CONFIG.PATH = {
     css: `${dir.context}/${dir.app}/${dir.src}/${dir.css}`,
     js: `${dir.context}/${dir.app}/${dir.src}/${dir.js}`,
     data: `${dir.context}/${dir.app}/${dir.src}/${dir.data}`,
+    temp: `${dir.context}/${dir.app}/${dir.src}/${dir.temp}`,
+    cont: `${dir.context}/${dir.app}/${dir.src}/${dir.temp}/${dir.cont}`,
   },
   dest: {
     root: `${dir.context}/${dir.app}/${dir.dest}`,
+    img: `${dir.context}/${dir.app}/${dir.dest}/${dir.img}`,
     css: `${dir.context}/${dir.app}/${dir.dest}/${dir.css}`,
     js: `${dir.context}/${dir.app}/${dir.dest}/${dir.js}`,
   },
 };
 
-module.exports = CONFIG;
+CONFIG.OPTION = {
+  ect: {
+    root: `${CONFIG.PATH.src.temp}`,
+    ext: '.ect',
+  },
+};
 
+module.exports = CONFIG;
 
 /**
  * start gulp

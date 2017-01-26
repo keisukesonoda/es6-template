@@ -1,0 +1,57 @@
+<%
+args =
+  title: @title
+  unique: @unique
+  data: @data
+meta = @fn.getMeta(args)
+%>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title><%- meta.title %></title>
+  <meta name="description" content="<%- meta.title %>">
+  <meta name="keywords" content="<%- meta.keywords %>">
+  <meta name="viewport" content="width=device-width">
+  <link id="style-pc" href="<%- @path %>css/pc.min.css" rel="stylesheet" media="screen and (min-width: 799px), print">
+  <link id="style-sp" href="<%- @path %>css/sp.min.css" rel="stylesheet" media="screen and (max-width: 798px)">
+  <script src="<%- @path %>js/init.js"></script>
+
+  <meta property="mixi:image" content="<%- meta.url %>img/OG.jpg" />
+  <meta property="og:image" content="<%- meta.url %>img/OG.jpg" />
+  <meta property="og:title" content="<%- meta.title %>" />
+  <meta property="og:url" content="<%- meta.url %>" />
+  <meta property="og:description" content="<%- meta.description %>" />
+  <meta property="og:type" content="<%- if @unique is 'home' then 'website' else 'article' %>" />
+</head>
+<body class="<%- @unique %>">
+  <div id="fb-root"></div>
+
+  <div id="wrapper" class="wrapper">
+
+    <header class="header"></header>
+    <!-- /header -->
+
+    <div class="contents-area">
+
+      <div class="contents">
+
+        <% content %>
+
+      </div>
+      <!-- /contents -->
+
+    </div>
+    <!-- /contents-area -->
+
+    <footer class="footer"></footer>
+    <!-- /footer -->
+
+  </div>
+  <!-- /wrapper -->
+
+
+  <script src="<%- @path %>js/main.js"></script>
+  <% if @fclass is 'home' : %><script src="<%- @path %>js/slider.js"></script><% end %>
+</body>
+</html>
