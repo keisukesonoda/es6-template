@@ -1,4 +1,4 @@
-import cats from '../data/cats.yaml';
+// import cats from '../data/cats.yaml';
 
 class Person {
   constructor(name) {
