@@ -7,7 +7,7 @@ class Friend extends Person {
   }
   callName() {
     console.log(this.name);
-    console.log(this.cats);
+    // console.log(this.cats);
   }
 }
 

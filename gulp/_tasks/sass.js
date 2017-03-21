@@ -6,7 +6,7 @@ const sass = require('gulp-sass');
 const plumber = require('gulp-plumber');
 const cssmin = require('gulp-cssmin');
 const rename = require('gulp-rename');
-const sourcemaps = require('gulp-sourcemaps');
+// const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
 
 const sassFiles = [];
@@ -26,7 +26,7 @@ gulp.task('sass', () => {
   });
 
   gulp.src(sassFiles)
-      .pipe(sourcemaps.init())
+      // .pipe(sourcemaps.init())
       .pipe(plumber())
       .pipe(sass({
         outputStyle: 'expanded',
@@ -42,7 +42,7 @@ gulp.task('sass', () => {
       }))
       .pipe(gulp.dest(`${CONFIG.PATH.src.css}`))
       .pipe(cssmin())
-      .pipe(sourcemaps.write('./'))
+      // .pipe(sourcemaps.write('./'))
       .pipe(rename({ suffix: '.min' }))
       .pipe(gulp.dest(`${CONFIG.PATH.dest.css}`))
       .pipe(browser.reload({ stream: true }));
