@@ -65,7 +65,8 @@ div.wpcf7 {
     margin: .2em 0;
   }
   .confirm, .back, .submit {
-    @include wh(340px, 45px);
+    width: 340px;
+    height: 45px;
     @extend .fsp3;
     @extend .opac;
     margin: 0 auto;

@@ -4,17 +4,27 @@
 
 // Colors
 $color-a: #000000; // text base
-$color-b: #e6e6e6; // bdr gray
-$color-c: #e5e5e5; // bg footer
-$color-d: #333333; // text gray
-$color-e: #cccccc; // bdr gray2
-$color-f: #f2f2f2; // bg archive-list
+$color-b: #000000; // 
+$color-c: #000000; // 
+$color-d: #000000; // 
+$color-e: #000000; // 
+$color-f: #000000; // 
 $color-g: #000000; // 
 $color-h: #000000; // 
 $color-i: #000000; // 
 $color-j: #000000; // 
 $color-k: #000000; // 
 $color-l: #000000; // 
+
+
+// easing
+$easeInSine:     cubic-bezier(0.47, 0, 0.745, 0.715);
+$easeOutSine:    cubic-bezier(0.39, 0.575, 0.565, 1);
+$easeInCirc:     cubic-bezier(0.6, 0.04, 0.98, 0.335);
+$easeOutCirc:    cubic-bezier(0.075, 0.82, 0.165, 1) ;
+$easeInOutCirc:  cubic-bezier(0.785, 0.135, 0.15, 0.86);
+$easeInOutQuint: cubic-bezier(0.86, 0, 0.07, 1);
+$easeOutQuart:   cubic-bezier(0.165, 0.84, 0.44, 1);
 
 
 // Heights
@@ -34,24 +44,62 @@ $radius-3: $radius-base * 4;
 import
 google font
 */
-// @import url(https://fonts.googleapis.com/css?family=Sorts+Mill+Goudy);
+@import url('https://fonts.googleapis.com/css?family=Muli');
+$Muli: 'Muli', sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+$montserrat: 'Montserrat', sans-serif;
 
-// $SortsMillGoudy: 'Sorts Mill Goudy', serif;
+/*
+参考
+https://speakerdeck.com/tacamy/modanri-ben-yu-huontozhi-ding
+
+適用外（regularウェイトが適用される）
+window 8.1で、かつoffice用フォントパックをいれていない場合
+・一般的なユーザはoffice用フォントパックを入れる想定
+・そもそもwindows8.1のシェアが少ない
+--------------- */
+
+// 游ゴシック詳細指定（windowsで細くなる問題回避）
+@font-face {
+  font-family: "MyYuGothicM";
+  font-weight: normal;
+  src: local("YuGothic-Medium"), /* Postscript name */
+       local("Yu Gothic Medium"), /* for Chrome */
+       local("YuGothic-Regular"); /* Mediumがない場合 */
+}
+@font-face {
+  font-family: "MyYuGothicM";
+  font-weight: bold;
+  src: local("YuGothic-Bold"), /* Postscript name */
+       local("Yu Gothic"); /* for Chrome */
+}
+
+/* 游ゴシック指定
+MyYuGothicM                Windows 游ゴシック
+YuGothic                   OS X 游ゴシック
+-apple-system              iOS San Francisco
+BlinkMacSystemFont         iOS Chrome San Francisco
+Hiragino Kaku Gothic ProN  OS X, iOS ヒラギノ
+Meiryo                     Windows メイリオ
+--------------- */
+$yuGothic: MyYuGothicM, YuGothic, -apple-system, BlinkMacSystemFont, 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+// $yuGothic: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 
 
-// @import url(https://fonts.googleapis.com/css?family=Merriweather);
+/* システムフォント指定
+-apple-system              OS X, iOS SanFrancisco
+BlinkMacSystemFont         OS X, iOS Chrome San Francisco
+Hiragino Kaku Gothic ProN  OS X, iOS ヒラギノ
+MyYuGothicM                Windows 游ゴシック
+Meiryo                     Windows メイリオ
+--------------- */
+$systemFont: -apple-system, BlinkMacSystemFont, 'Hiragino Kaku Gothic ProN', MyYuGothicM, Meiryo, sans-serif;
 
-// $Merriweather: 'Merriweather', serif;
-
-
-// font faces
-$notosans: 'Noto Sans', "メイリオ", Meiryo, 'Jun34Pro', "Lucida Grande", "segoe UI", "ヒラギノ丸ゴ ProN W4", "Hiragino Maru Gothic Pro", Verdana, Arial, sans-serif;
+// $notosans: 'Noto Sans', "メイリオ", Meiryo, 'Jun34Pro', "Lucida Grande", "segoe UI", "ヒラギノ丸ゴ ProN W4", "Hiragino Maru Gothic Pro", Verdana, Arial, sans-serif;
 
 $meiryoFont: "メイリオ", Meiryo, 'Jun34Pro', "Lucida Grande", "segoe UI", "ヒラギノ丸ゴ ProN W4", "Hiragino Maru Gothic Pro", Verdana, Arial, sans-serif;
 
 $gothicFont: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic", YuGothic, "メイリオ", "Meiryo", sans-serif;
-
-$yuGothic: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 
 $yuMincho: "游明朝", "YuMincho", 'ヒラギノ明朝 Pro W3', "Hiragino Mincho ProN", "Hiragino Mincho Pro", 'HG明朝E', 'ＭＳ Ｐ明朝', 'ＭＳ 明朝', serif;
 
@@ -60,3 +108,6 @@ $kozGothic: "KozGoPro-Regular", "小塚ゴシック Pro R", "KozGoPro-Light", "�
 $minchoFont: 'ヒラギノ明朝 Pro W3', "Hiragino Mincho ProN", "Hiragino Mincho Pro", "游明朝", "YuMincho", 'HG明朝E', 'ＭＳ Ｐ明朝', 'ＭＳ 明朝', serif;
 
 $helvetica: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+
+$basic: 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, MyYuGothicM, YuGothic, Osaka, 'MS PGothic', arial, helvetica, sans-serif;
+

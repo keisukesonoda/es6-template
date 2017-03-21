@@ -11,8 +11,8 @@ const autoprefixer = require('gulp-autoprefixer');
 
 const sassFiles = [];
 const compileFiles = [
-  'pc',
-  'sp',
+  'style.pc',
+  'style.sp',
   // 'editor-style',
 ];
 
