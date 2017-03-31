@@ -1,4 +1,4 @@
-import UA from './_init/userAgent';
+import UA from './_general/getUserAgent';
 
 // タブレット時のviewportを固定
 if (UA.TAB) document.querySelectorAll('meta[name=viewport]')[0].content = 'width=1024';

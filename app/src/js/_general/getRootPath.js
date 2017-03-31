@@ -10,10 +10,10 @@ let i = style.length;
 while (i) {
   i -= 1;
   const matchs = [
-    style[i].href.match(/(^|.*\/)pc\.css$/),
-    style[i].href.match(/(^|.*\/)pc\.min\.css$/),
-    style[i].href.match(/(^|.*\/)sp\.css$/),
-    style[i].href.match(/(^|.*\/)sp\.min\.css$/),
+    style[i].href.match(/(^|.*\/)style\.css$/),
+    style[i].href.match(/(^|.*\/)style\.min\.css$/),
+    style[i].href.match(/(^|.*\/)style\.sp\.css$/),
+    style[i].href.match(/(^|.*\/)style\.sp\.min\.css$/),
   ];
 
   matchs.some((match) => {
