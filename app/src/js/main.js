@@ -48,3 +48,16 @@ class GoodsModalClass extends ModalClass {
     });
   }
 }
+
+const goodsModal = () => {
+  const $trgs = $('.cm-modal-trg');
+
+  $trgs.each((i, trg) => {
+    const args = {
+      trg: $(trg),
+      content: $(trg),
+    };
+    const Modal = new GoodsModalClass(args);
+    Modal.init();
+  });
+};
