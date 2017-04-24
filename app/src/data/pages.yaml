@@ -1,0 +1,12 @@
+directories:
+  - files:
+      - name: index
+        title: トップ
+        unique: home
+
+
+  - name: inq
+    files:
+      - name: header
+      - name: footer
+      - name: nav-list
