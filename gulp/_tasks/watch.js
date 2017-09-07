@@ -10,6 +10,10 @@ gulp.task('watch', () => {
   ], ['reload']);
 
   gulp.watch([
+    `${CONFIG.PATH.src.img}/**`,
+  ], ['image:copy']);
+
+  gulp.watch([
     `${CONFIG.PATH.src.temp}/**/*.ect`,
     `${CONFIG.PATH.src.data}/**`,
   ], ['ect-base']);

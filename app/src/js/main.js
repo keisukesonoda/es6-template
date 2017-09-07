@@ -1,63 +1,45 @@
-import Person from './app';
+import UA from './_general/getUserAgent';
+import Includes from './_classes/includeClass';
 
-class Friend extends Person {
-  constructor(name) {
-    super(name);
-    this.name = name;
-  }
-  callName() {
-    console.log(this.name);
-    // console.log(this.cats);
-  }
-}
-
-const friend = new Friend('hoge');
-
-friend.callName();
-
-
-import ModalClass from './_classes/modalClass';
-
-class GoodsModalClass extends ModalClass {
-  constructor(args) {
-    super(args);
-  }
-
-  init() {
-    this.openAction();
-  }
-
-  openAction() {
-    this.args.trg.on('click', (e) => {
-      e.preventDefault();
-      super.disableScroll();
-      super.open(this.args.content);
-      this.closeAction();
-    });
-  }
-
-  closeAction() {
-    const trgs = [this.elms.overlay, this.elms.close];
-    $.each(trgs, (i, trg) => {
-      $(trg).on('click', (e) => {
-        e.preventDefault();
-        super.close();
-        super.enableScroll();
-        $(trg).off('click');
-      });
-    });
-  }
-}
-
-const goodsModal = () => {
-  const $trgs = $('.cm-modal-trg');
-
-  $trgs.each((i, trg) => {
-    const args = {
-      trg: $(trg),
-      content: $(trg),
-    };
-    const Modal = new GoodsModalClass(args);
-    Modal.init();
-  });
+/**
+ * tablet viewport
+ */
+const changeViewport = () => {
+  if (!UA.TAB) return;
+  document.querySelectorAll('meta[name=viewport]')[0].content = 'width=900';
 };
+
+
+/**
+ * ajaxIncludes
+ */
+const ajaxIncludes = () => {
+  const includeFiles = ['header', 'footer'];
+  let i = 0;
+  const len = includeFiles.length;
+
+  for (i; i < len; i += 1) {
+    const file = includeFiles[i];
+    const args = {
+      dir: 'inq',
+      fileName: file,
+      selecter: `#${file}`,
+      callback: (_this) => {
+        if (file === 'header') {
+          // header読み込み後のコールバック
+        } else if (file === 'footer') {
+          // footer読み込み後のコールバック
+        }
+      },
+    };
+
+    const inq = new Includes(args);
+    inq.ajax();
+  }
+};
+
+
+$(document).on('ready', () => {
+  changeViewport();
+  ajaxIncludes();
+});

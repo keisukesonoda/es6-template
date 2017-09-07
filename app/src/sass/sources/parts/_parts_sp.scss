@@ -18,7 +18,7 @@
   display: block;
   height: 0;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: left top;
   background-size: contain;
   overflow: hidden;
   white-space: nowrap;
@@ -37,22 +37,18 @@
 }
 
 // general font sizes
-$pixels: (
-  769: 769px,
-  667: 667px,
-  568: 568px,
-  414: 414px,
-  375: 375px,
-  320: 320px
-);
-
-@each $key, $pixel in $pixels {
-  @media screen and(max-width: #{$pixel}) {
-    html {
-      font-size: 0.195% * $key;
+$min: 320;
+$max: 780;
+@for $i from $min through $max {
+  @media screen and(min-width: #{$i}+px) {
+    @if $i % 10 == 0 {
+      html {
+        font-size: 0.195% * $i;
+      }
     }
   }
 }
+
 
 // container sizes
 .container {
@@ -73,7 +69,7 @@ $pixels: (
 }
 
 .full-elm {
-  $over: 100% - percentage($mwidth/$fwidth);
+  $over: 100% - percentage($mwidth/$fwidth) + 1%;
   width: 100% + $over;
   margin-left: -( $over / 2);
   padding-left: $over / 2;

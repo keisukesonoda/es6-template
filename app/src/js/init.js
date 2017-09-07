@@ -14,4 +14,3 @@ const killTgt = document.querySelectorAll(`#style-${kill}`)[0];
 liveTgt.media = 'all';
 
 killTgt.parentNode.removeChild(killTgt);
-

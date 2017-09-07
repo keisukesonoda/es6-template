@@ -1,6 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css?family=Muli");
-@import url("https://fonts.googleapis.com/css?family=Montserrat");
+@import url("https://fonts.googleapis.com/css?family=Fjalla+One");
 @-webkit-keyframes fadeIn {
   0% {
     display: block;
@@ -3202,7 +3201,7 @@ html {
 
 body {
   font-size: 14px;
-  font-family: MyYuGothicM, YuGothic, -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic", YuGothic, "メイリオ", "Meiryo", sans-serif;
   color: #000000;
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
@@ -3247,6 +3246,7 @@ table {
 }
 
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   outline: none;
 }
@@ -3255,7 +3255,7 @@ input, textarea {
   border: none;
 }
 
-button.ti, button.btn-img {
+button.ti {
   text-indent: 160%;
 }
 
@@ -3526,38 +3526,38 @@ button.ti, button.btn-img {
 }
 
 .wrapper {
-  min-width: 1080px;
+  min-width: 875px;
 }
 
 .container {
-  width: 1080px;
+  width: 875px;
   margin: 0 auto;
 }
 
 .container.lg {
-  width: 1168px;
+  width: 980px;
 }
 
 .container.md {
-  width: 1080px;
+  width: 875px;
 }
 
 .container.sm {
-  width: 1040px;
+  width: 690px;
 }
 
 .container.xs {
-  width: 990px;
+  width: 800px;
 }
 
 .full-elm {
-  width: 3080px;
+  width: 2875px;
   margin-left: -1000px;
   padding-left: 1000px;
   padding-right: 1000px;
 }
 
-.ti, .btn-img {
+.ti {
   display: block;
   background-repeat: no-repeat;
   background-position: left top;
@@ -4444,192 +4444,37 @@ button.ti, button.btn-img {
   display: flex;
 }
 
-.bg-base {
-  background-color: #000000;
-}
-
-.col-base {
-  color: #000000;
-}
-
-.hov-col-base {
-  color: #000000;
-}
-
-.hov-col-base:hover:not(.disable) {
-  color: #505050;
-  -webkit-transition: all 0.2s linear 0s;
-  transition: all 0.2s linear 0s;
-}
-
-.bg-theme-red {
-  background-color: #c60613;
-}
-
-.col-theme-red {
-  color: #c60613;
-}
-
-.hov-col-theme-red {
-  color: #c60613;
-}
-
-.hov-col-theme-red:hover:not(.disable) {
-  color: #ff5663;
-  -webkit-transition: all 0.2s linear 0s;
-  transition: all 0.2s linear 0s;
-}
-
 /* --------------------
-  javascript settings
--------------------- */
-/* --------------------
-  project original
+  common parts
 -------------------- */
 /* titles
 -------------------- */
-/* tables
+/* colors
 -------------------- */
-/* boxes
+.bg-text-base {
+  background-color: #000000;
+}
+
+.col-text-base {
+  color: #000000;
+}
+
+.hov-col-text-base {
+  color: #000000;
+  -webkit-transition: color 0.2s linear 0s;
+  transition: color 0.2s linear 0s;
+}
+
+.hov-col-text-base:hover:not(.disable) {
+  color: #3c3c3c;
+}
+
+/* texts
 -------------------- */
-/* links
--------------------- */
-/* btns
--------------------- */
-.btn-img.totop {
-  width: 76px;
-  height: 136px;
-  background-image: url(images/btn_totop.png);
+.hov-tdu:hover {
+  text-decoration: underline;
 }
 
-/* arrows
--------------------- */
-.arr {
-  position: relative;
-}
-
-.arr:before, .arr:after {
-  display: inline-block;
-  background-image: url(./images/arrows.png);
-  background-repeat: no-repeat;
-}
-
-.arr.ar-bf:before {
-  content: "";
-}
-
-.arr.ar-af:after {
-  content: "";
-}
-
-.arr.ar-base-bk:before, .arr.ar-base-bk:after {
-  width: 8px;
-  height: 13px;
-  background-position: 0 top;
-}
-
-.arr.ar-txt {
-  vertical-align: middle;
-}
-
-.arr.ar-txt:before, .arr.ar-txt:after {
-  width: auto;
-  height: auto;
-  position: relative;
-  top: -2.5px;
-  line-height: 1;
-  background: none;
-  display: inline-block;
-  vertical-align: middle;
-  overflow: visible;
-  white-space: normal;
-  text-indent: 0;
-}
-
-.arr.ar-txt.ar-bf:before {
-  margin-right: 20px;
-}
-
-.arr.ar-txt.ar-af:after {
-  margin-left: 20px;
-}
-
-.arr.ar-txt.type-base.ar-bf:before, .arr.ar-txt.type-base.ar-af:after {
-  content: ">";
-}
-
-.arr.ar-txt.type-ar.ar-bf:before, .arr.ar-txt.type-ar.ar-af:after {
-  content: "→";
-}
-
-.arr.ar-right:before, .arr.ar-right:after {
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
-}
-
-.arr.ar-down:before, .arr.ar-down:after {
-  -webkit-transform: rotate(90deg);
-  transform: rotate(90deg);
-}
-
-.arr.ar-left:before, .arr.ar-left:after {
-  -webkit-transform: rotate(180deg);
-  transform: rotate(180deg);
-}
-
-.arr.ar-up:before, .arr.ar-up:after {
-  -webkit-transform: rotate(270deg);
-  transform: rotate(270deg);
-}
-
-.arr.ar-sml:before, .arr.ar-sml:after {
-  -webkit-transform: scale(0.8);
-  transform: scale(0.8);
-  vertical-align: middle;
-}
-
-.arr.ar-sml:before {
-  margin-right: .8em;
-  position: relative;
-  top: -1px;
-}
-
-/* icons
--------------------- */
-.icon {
-  position: relative;
-}
-
-.icon:before, .icon:after {
-  display: inline-block;
-  background-image: url(../img/icons.png);
-  background-repeat: no-repeat;
-}
-
-.icon.ico-bf:before {
-  content: "";
-}
-
-.icon.ico-af:after {
-  content: "";
-}
-
-.icon.ico-tw:before, .icon.ico-tw:after {
-  width: 28px;
-  height: 22px;
-  background-position: 0 top;
-}
-
-.icon.ico-thumb-new:before, .icon.ico-thumb-new:after {
-  width: 74px;
-  height: 26px;
-  background-position: -28px top;
-}
-
-/* tags
--------------------- */
-/* lists
--------------------- */
 /* --------------------
   common sections
 -------------------- */
@@ -4639,17 +4484,11 @@ button.ti, button.btn-img {
   min-height: 500px;
 }
 
-/* page content
--------------------- */
 /* header
 -------------------- */
 /* footer
 -------------------- */
-/* sidebar
--------------------- */
-/* archive共通
--------------------- */
-/* single共通
+/* ナビ共通
 -------------------- */
 /* トップ
 -------------------- */

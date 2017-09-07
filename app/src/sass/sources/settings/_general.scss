@@ -4,18 +4,17 @@
 
 // Colors
 $color-a: #000000; // text base
-$color-b: #000000; // 
-$color-c: #000000; // 
-$color-d: #000000; // 
-$color-e: #000000; // 
-$color-f: #000000; // 
-$color-g: #000000; // 
-$color-h: #000000; // 
-$color-i: #000000; // 
-$color-j: #000000; // 
-$color-k: #000000; // 
-$color-l: #000000; // 
-
+$color-b: #000000; //
+$color-c: #000000; //
+$color-d: #000000; //
+$color-e: #000000; //
+$color-f: #000000; //
+$color-g: #000000; //
+$color-h: #000000; //
+$color-i: #000000; //
+$color-j: #000000; //
+$color-k: #000000; //
+$color-l: #000000; //
 
 // easing
 $easeInSine:     cubic-bezier(0.47, 0, 0.745, 0.715);
@@ -44,10 +43,12 @@ $radius-3: $radius-base * 4;
 import
 google font
 */
-@import url('https://fonts.googleapis.com/css?family=Muli');
-$Muli: 'Muli', sans-serif;
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
-$montserrat: 'Montserrat', sans-serif;
+// @import url('https://fonts.googleapis.com/css?family=Muli');
+// $Muli: 'Muli', sans-serif;
+// @import url('https://fonts.googleapis.com/css?family=Montserrat');
+// $montserrat: 'Montserrat', sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One');
+$fjalla: 'Fjalla One', sans-serif;
 
 /*
 参考
@@ -110,4 +111,3 @@ $minchoFont: 'ヒラギノ明朝 Pro W3', "Hiragino Mincho ProN", "Hiragino Minc
 $helvetica: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 
 $basic: 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, MyYuGothicM, YuGothic, Osaka, 'MS PGothic', arial, helvetica, sans-serif;
-

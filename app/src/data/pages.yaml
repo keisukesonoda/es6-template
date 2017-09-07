@@ -9,4 +9,4 @@ directories:
     files:
       - name: header
       - name: footer
-      - name: nav-list
+      # - name: nav-list

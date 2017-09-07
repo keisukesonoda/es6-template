@@ -23,8 +23,7 @@ class disableSaveImage {
       },
     });
   }
-
-};
+}
 
 
 export default disableSaveImage;

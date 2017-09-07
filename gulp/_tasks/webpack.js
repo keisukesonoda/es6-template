@@ -11,9 +11,9 @@ gulp.task('webpack', () => {
   gulp.src([
     `${CONFIG.PATH.src.js}/*.js`,
   ])
-      .pipe(webpack(webpackConfig))
-      .pipe(gulp.dest(`${CONFIG.PATH.dest.js}`))
-      .pipe(browser.reload({
-        stream: true,
-      }));
+    .pipe(webpack(webpackConfig))
+    .pipe(gulp.dest(`${CONFIG.PATH.dest.js}`))
+    .pipe(browser.reload({
+      stream: true,
+    }));
 });

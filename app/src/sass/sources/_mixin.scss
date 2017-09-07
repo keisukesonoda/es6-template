@@ -4,7 +4,7 @@
 @mixin whi($width, $height, $imageFile) {
   width: $width;
   height: $height;
-  background-image: url(images/#{$imageFile});
+  background-image: url(../images/#{$imageFile});
 }
 
 @mixin wh($width, $height) {
@@ -14,7 +14,7 @@
 
 @mixin spi($pt, $imageFile) {
   padding-top: $pt;
-  background-image: url(images/#{$imageFile});
+  background-image: url(../images/#{$imageFile});
 }
 
 @mixin sp($pt) {

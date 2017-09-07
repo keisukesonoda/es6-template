@@ -30,18 +30,19 @@ gulp.task('ect-base', ['data-updates'], () => {
       pages.files.forEach((file) => {
         // 第一階層
         gulp.src(`${CONFIG.PATH.src.cont}/${dir}${file.name}.ect`)
-            .pipe(ect({
-              options: CONFIG.OPTION.ect,
-              data: {
-                title: file.title,
-                unique: file.unique,
-                path: pages.name ? '../' : './',
-                data: DATA,
-                fn: FUNC,
-              },
-            }))
-            .pipe(gulp.dest(`${CONFIG.PATH.dest.root}/${dir}`))
-            .pipe(browser.reload({ stream: true }));
+          .pipe(ect({
+            options: CONFIG.OPTION.ect,
+            data: {
+              title: file.title,
+              unique: file.unique,
+              pageClass: pages.name ? pages.name : 'home',
+              path: pages.name ? '../' : './',
+              data: DATA,
+              fn: FUNC,
+            },
+          }))
+          .pipe(gulp.dest(`${CONFIG.PATH.dest.root}/${dir}`))
+          .pipe(browser.reload({ stream: true }));
       }); // endforeach pages.files
     }
 
@@ -50,21 +51,21 @@ gulp.task('ect-base', ['data-updates'], () => {
       pages.lower.forEach((lowers) => {
         lowers.files.forEach((lwrFile) => {
           gulp.src(`${CONFIG.PATH.src.cont}/${dir}${lowers.dir}/${lwrFile.name}.ect`)
-              .pipe(ect({
-                options: CONFIG.OPTION.ect,
-                data: {
-                  title: lwrFile.title,
-                  unique: lwrFile.unique,
-                  path: '../../',
-                  data: DATA,
-                  fn: FUNC,
-                },
-              }))
-              .pipe(gulp.dest(`${CONFIG.PATH.dest.root}/${dir}${lowers.dir}`))
-              .pipe(browser.reload({ stream: true }));
+            .pipe(ect({
+              options: CONFIG.OPTION.ect,
+              data: {
+                title: lwrFile.title,
+                unique: lwrFile.unique,
+                pageClass: pages.name,
+                path: '../../',
+                data: DATA,
+                fn: FUNC,
+              },
+            }))
+            .pipe(gulp.dest(`${CONFIG.PATH.dest.root}/${dir}${lowers.dir}`))
+            .pipe(browser.reload({ stream: true }));
         });
       });
     } // endif pages.lower
   }); // endforeach DATA.page.directories
 });
-

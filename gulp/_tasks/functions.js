@@ -11,10 +11,14 @@ const FUNCTIONS = {};
 FUNCTIONS.getMeta = (args) => {
   const result = {};
   // タイトル
-  const f = args.ftitle && args.ftitle !== 'トップ' ? `${args.ftitle} | ` : '';
-  const l = args.ltitle ? `${args.ltitle} | ` : '';
-  const p = args.ptitle ? `${args.ptitle} | ` : '';
-  result.title = `${f}${l}${p}${args.data.init.global.sitename}`;
+  const pageTitle = args.isSingle || args.isArchive ? `${args.title} | ` : '';
+  let groupTitle = '';
+  if (args.path !== './' && args.isSingle || args.path !== './' && args.isArchive) {
+    groupTitle = `${args.pageTitle} | `;
+  } else if (args.path !== './' && !args.isSingle || args.path !== './' && !args.isArchive) {
+    groupTitle = `${args.title} | `;
+  }
+  result.title = `${pageTitle}${groupTitle}${args.data.init.global.sitename}`;
   // キーワード
   result.keywords = args.data.init.global.keywords;
   // ディスクリプション
@@ -26,7 +30,7 @@ FUNCTIONS.getMeta = (args) => {
 };
 
 
-FUNCTIONS.getLink = (href) => {
+FUNCTIONS.gethref = (href) => {
   let result = '';
   if (href) result = `href="${href}"`;
 

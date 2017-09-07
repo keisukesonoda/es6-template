@@ -1,8 +1,12 @@
 <%
 args =
   title: @title
-  unique: @unique
+  path: @path
   data: @data
+  isSingle: @isSingle
+  isArchive: @isArchive
+  name: if @isSingle then @name else ''
+  pageTitle: if @isSingle or @isArchive then @pageTitle else ''
 meta = @fn.getMeta(args)
 %>
 <!DOCTYPE html>
@@ -10,12 +14,11 @@ meta = @fn.getMeta(args)
 <head>
   <meta charset="utf-8">
   <title><%- meta.title %></title>
-  <meta name="description" content="<%- meta.title %>">
+  <meta name="description" content="<%- meta.description %>">
   <meta name="keywords" content="<%- meta.keywords %>">
   <meta name="viewport" content="width=device-width">
   <link id="style-pc" href="<%- @path %>css/style.pc.min.css" rel="stylesheet" media="screen and (min-width: 768px), print">
   <link id="style-sp" href="<%- @path %>css/style.sp.min.css" rel="stylesheet" media="screen and (max-width: 767px)">
-  <script src="<%- @path %>js/init.js"></script>
 
   <meta property="mixi:image" content="<%- meta.url %>img/OG.jpg" />
   <meta property="og:image" content="<%- meta.url %>img/OG.jpg" />
@@ -29,7 +32,7 @@ meta = @fn.getMeta(args)
 
   <div id="wrapper" class="wrapper">
 
-    <header class="header"></header>
+    <header id="header" class="header"></header>
     <!-- /header -->
 
     <div class="contents-area">
@@ -44,7 +47,7 @@ meta = @fn.getMeta(args)
     </div>
     <!-- /contents-area -->
 
-    <footer class="footer"></footer>
+    <footer id="footer" class="footer"></footer>
     <!-- /footer -->
 
   </div>
@@ -52,6 +55,8 @@ meta = @fn.getMeta(args)
 
 
   <script src="<%- @path %>js/main.js"></script>
-  <% if @fclass is 'home' : %><script src="<%- @path %>js/slider.js"></script><% end %>
+<!--
+  <% if @pageClass is 'home' : %><script src="<%- @path %>js/slider.js"></script><% end %>
+-->
 </body>
 </html>

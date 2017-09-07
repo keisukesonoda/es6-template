@@ -2,10 +2,10 @@
 // -------------------------------------
 
 $container: (
-  lg: 1168px,
-  md: 1080px,
-  sm: 1040px,
-  xs: 990px,
+  lg: 980px,
+  md: 875px,
+  sm: 690px,
+  xs: 800px,
 );
 
 $main: map-get($container, md);
@@ -15,7 +15,10 @@ $wp-margin-base: 2em;
 
 $hoverTransition: .2s;
 
-$font-family-base: $yuGothic;
+// $font-family-base: $yuGothic;
+// $font-family-base: meiryoFont;
+$font-family-base: $gothicFont;
+
 $font-size-base: 14px;
 
 $font-size-m1: $font-size-base - 1px;
@@ -51,6 +54,3 @@ $space-7: $space-base * 7;
 $space-8: $space-base * 8;
 $space-9: $space-base * 9;
 $space-10: $space-base * 10;
-
-
-

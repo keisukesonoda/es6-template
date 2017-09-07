@@ -1,30 +1,22 @@
-
 const CONFIG = require('./config');
 const webpack = require('webpack');
 
 const webpackConf = {
-
   // エントリーポイント
   entry: {
-    init: [`${CONFIG.PATH.src.js}/init.js`],
-    app: [`${CONFIG.PATH.src.js}/app.js`],
+    // init: [`${CONFIG.PATH.src.js}/init.js`],
     main: [`${CONFIG.PATH.src.js}/main.js`],
+    // modal: [`${CONFIG.PATH.src.js}/modal.js`],
+    // slider: [`${CONFIG.PATH.src.js}/slider.js`],
   },
 
   // 出力先
   output: {
-    // filename: 'bundle.js',
     filename: '[name].js'
   },
 
-  // dev-server設定
-  // devServer: {
-  //   contentBase: './app/dist',
-  //   port: 3000
-  // },
-
   // ソースマップ出力（https://webpack.github.io/docs/configuration.html#devtool）
-  devtool: 'source-map',
+  // devtool: 'source-map',
 
   // プラグイン設定（https://github.com/webpack/docs/wiki/list-of-plugins）
   plugins: [

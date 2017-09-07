@@ -10,12 +10,12 @@ CONFIG.DIR = {
   context: GLOB.context,
   app: 'app',
   src: 'src',
-  dest: 'dist',
+  dest: 'build',
   js: 'js',
   css: 'css',
   sass: 'sass',
   data: 'data',
-  img: 'img',
+  img: 'images',
   inq: 'includes',
   temp: 'templates',
   cont: 'content',
@@ -25,21 +25,24 @@ CONFIG.DIR = {
  * path settings
  */
 const dir = CONFIG.DIR;
+const SRC = `${dir.context}/${dir.app}/${dir.src}`;
+const DEST = `${dir.context}/${dir.app}/${dir.dest}`;
 CONFIG.PATH = {
   src: {
-    root: `${dir.context}/${dir.app}/${dir.src}`,
-    sass: `${dir.context}/${dir.app}/${dir.src}/${dir.sass}`,
-    css: `${dir.context}/${dir.app}/${dir.src}/${dir.css}`,
-    js: `${dir.context}/${dir.app}/${dir.src}/${dir.js}`,
-    data: `${dir.context}/${dir.app}/${dir.src}/${dir.data}`,
-    temp: `${dir.context}/${dir.app}/${dir.src}/${dir.temp}`,
-    cont: `${dir.context}/${dir.app}/${dir.src}/${dir.temp}/${dir.cont}`,
+    root: `${SRC}`,
+    img: `${SRC}/${dir.img}`,
+    sass: `${SRC}/${dir.sass}`,
+    css: `${SRC}/${dir.css}`,
+    js: `${SRC}/${dir.js}`,
+    data: `${SRC}/${dir.data}`,
+    temp: `${SRC}/${dir.temp}`,
+    cont: `${SRC}/${dir.temp}/${dir.cont}`,
   },
   dest: {
-    root: `${dir.context}/${dir.app}/${dir.dest}`,
-    img: `${dir.context}/${dir.app}/${dir.dest}/${dir.img}`,
-    css: `${dir.context}/${dir.app}/${dir.dest}/${dir.css}`,
-    js: `${dir.context}/${dir.app}/${dir.dest}/${dir.js}`,
+    root: `${DEST}`,
+    img: `${DEST}/${dir.img}`,
+    css: `${DEST}/${dir.css}`,
+    js: `${DEST}/${dir.js}`,
   },
 };
 

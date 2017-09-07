@@ -4,11 +4,11 @@
 $full: 100%;
 $half: 50%;
 
-$fwidth: 750;
-$lwidth: 750;
-$mwidth: 710;
-$swidth: 600;
-$xwidth: 500;
+$fwidth: 960;
+$lwidth: 900;
+$mwidth: 874;
+$swidth: 840;
+$xwidth: 800;
 
 $container: (
   lg: percentage($lwidth / $fwidth),
@@ -59,7 +59,3 @@ $space-7: $space-base * 7;
 $space-8: $space-base * 8;
 $space-9: $space-base * 9;
 $space-10: $space-base * 10;
-
-
-
-

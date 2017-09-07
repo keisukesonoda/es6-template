@@ -1,6 +1,5 @@
 global:
-  url: 
-  sitename: 
-  keywords: 
-  description: 
-
+  url: http://sample.com
+  sitename: es6 テンプレート
+  keywords: es6, js, ect, sass
+  description: es6のテンプレートです。
